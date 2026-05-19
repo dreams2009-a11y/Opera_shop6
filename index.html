@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طقم المولودة الفاخر 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f5ede8;
+    font-family: 'Tajawal', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(1.04) saturate(1.1);
+    display: block;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.05) 0%,
+      rgba(255,240,235,0.0) 40%,
+      rgba(245,237,232,0.85) 80%,
+      rgba(245,237,232,1) 100%
+    );
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-size: 15px;
+    color: #c07070;
+    font-weight: 700;
+    border: 1px solid rgba(210,150,150,0.3);
+    z-index: 2;
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .main {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .title-section {
+    text-align: center;
+    padding: 28px 0 24px;
+  }
+
+  .emoji-row { font-size: 30px; margin-bottom: 12px; }
+
+  .headline {
+    font-family: 'Amiri', serif;
+    font-size: 32px;
+    color: #8b3a3a;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .headline span { color: #c87878; }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to left, transparent, #d4a0a0, transparent);
+    margin: 0 auto 18px;
+    border-radius: 10px;
+  }
+
+  .body-text {
+    font-size: 17px;
+    color: #6b4040;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  .body-text strong { color: #a05050; font-weight: 700; }
+
+  /* Pills */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .pill {
+    background: linear-gradient(135deg, #ffe4e4, #ffd6d6);
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 14px;
+    color: #934040;
+    font-weight: 600;
+    border: 1px solid rgba(200,130,130,0.25);
+  }
+
+  /* ===== ORDER FORM ===== */
+  .form-section {
+    background: white;
+    border-radius: 24px;
+    padding: 30px 28px;
+    box-shadow: 0 10px 40px rgba(180,110,110,0.12);
+    margin-bottom: 20px;
+  }
+
+  .form-title {
+    font-family: 'Amiri', serif;
+    font-size: 24px;
+    color: #8b3a3a;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .form-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #b08080;
+    margin-bottom: 24px;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #7a4040;
+    margin-bottom: 8px;
+  }
+
+  .field label span { color: #c87878; }
+
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #f0d8d8;
+    border-radius: 14px;
+    font-size: 15px;
+    font-family: 'Tajawal', sans-serif;
+    color: #5a3030;
+    background: #fffaf9;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    direction: rtl;
+  }
+
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    border-color: #c87878;
+    box-shadow: 0 0 0 3px rgba(200,120,120,0.12);
+  }
+
+  .field textarea { resize: none; height: 90px; }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: #c4a0a0;
+    font-size: 14px;
+  }
+
+  /* WhatsApp Button */
+  .wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: linear-gradient(135deg, #25d366, #1da851);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 28px;
+    font-size: 18px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+    text-decoration: none;
+  }
+
+  .wa-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37,211,102,0.45);
+  }
+
+  .wa-icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+  }
+
+  /* Error */
+  .error-msg {
+    display: none;
+    color: #c05050;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  .field.error input,
+  .field.error textarea {
+    border-color: #e08080;
+  }
+
+  .field.error .error-msg { display: block; }
+
+  /* Success screen */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success-screen .big-emoji { font-size: 60px; margin-bottom: 16px; }
+
+  .success-screen h2 {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    color: #8b3a3a;
+    margin-bottom: 10px;
+  }
+
+  .success-screen p {
+    font-size: 16px;
+    color: #9a6060;
+    line-height: 1.8;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 13px;
+    color: #b08080;
+    padding: 10px 0;
+  }
+
+  /* Floating WA button */
+  .float-wa {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 58px;
+    height: 58px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.2s;
+    text-decoration: none;
+  }
+
+  .float-wa:hover { transform: scale(1.1); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .form-section { animation: fadeUp 0.6s ease 0.2s both; }
+</style>
+</head>
+<body>
+
+<!-- Hero Image -->
+<div class="hero">
+  <div class="hero-badge">🎁 هدية مميزة للمولودة</div>
+  <img src="IMG_2233.HEIC" alt="طقم المولودة">
+</div>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="title-section">
+    <div class="emoji-row">🎀 🌷 🍼</div>
+    <h1 class="headline">
+      لأنها <span>أميرتكِ</span>...<br>
+      تستحق أجمل بداية 🤍
+    </h1>
+    <div class="divider"></div>
+    <p class="body-text">
+      يا أمّ البنت الصغيرة 💕<br>
+      كم مرة تخيّلتِ وجهها الصغير،<br>
+      وحضنتِ الفكرة قبل ما تحضنيها؟ 🌸<br><br>
+      <strong>طقم المولودة الفاخر</strong> — مصمَّم بحبٍّ لأول لحظة تلمس فيها الدنيا.<br>
+      مطرَّز باسمها، ليُخبر العالم إنها وصلت 🎀
+    </p>
+    <div class="pills">
+      <span class="pill">✦ تطريز بالاسم</span>
+      <span class="pill">✦ قماش ناعم 100%</span>
+      <span class="pill">✦ هدية جاهزة للتغليف</span>
+      <span class="pill">✦ تصميم حصري</span>
+    </div>
+  </div>
+
+  <!-- Order Form -->
+  <div class="form-section" id="formSection">
+    <h2 class="form-title">🎀 سجّلي طلبك الآن</h2>
+    <p class="form-subtitle">املئي البيانات وسيصلك رد خلال دقائق ✨</p>
+
+    <div class="field" id="field-name">
+      <label>اسمك الكريم <span>*</span></label>
+      <input type="text" id="inp-name" placeholder="مثال: أم سارة" />
+      <div class="error-msg">⚠️ الرجاء إدخال اسمك</div>
+    </div>
+
+    <div class="field" id="field-phone">
+      <label>رقم الواتساب <span>*</span></label>
+      <input type="tel" id="inp-phone" placeholder="07xxxxxxxx" dir="ltr" />
+      <div class="error-msg">⚠️ الرجاء إدخال رقم الواتساب</div>
+    </div>
+
+    <div class="field" id="field-babyname">
+      <label>اسم المولودة <span>*</span> <small style="color:#b08080;font-weight:400">(للتطريز)</small></label>
+      <input type="text" id="inp-babyname" placeholder="مثال: دانية، لين، جنى..." />
+      <div class="error-msg">⚠️ الرجاء إدخال اسم المولودة</div>
+    </div>
+
+    <div class="field">
+      <label>المدينة / العنوان</label>
+      <input type="text" id="inp-city" placeholder="مثال: عمّان، إربد..." />
+    </div>
+
+    <div class="field">
+      <label>ملاحظات إضافية</label>
+      <textarea id="inp-notes" placeholder="أي تفاصيل خاصة، لون مفضّل، تاريخ التسليم المطلوب..."></textarea>
+    </div>
+
+    <button class="wa-btn" onclick="sendOrder()">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.886l6.197-1.448A11.933 11.933 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.493-5.189-1.355l-.373-.22-3.678.859.898-3.582-.241-.385A9.937 9.937 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      أرسلي طلبك عبر واتساب 💬
+    </button>
+  </div>
+
+  <!-- Success Screen (hidden initially) -->
+  <div class="success-screen" id="successScreen">
+    <div class="big-emoji">🎀</div>
+    <h2>تم إرسال طلبك بنجاح!</h2>
+    <p>شكراً لكِ 💕<br>سيتواصل معكِ فريقنا على الواتساب<br>في أقرب وقت لتأكيد الطلب ✨</p>
+  </div>
+
+  <div class="footer">💌 يُرسَل مُغلَّفاً بالفرح، جاهزاً للإهداء</div>
+</div>
+
+<!-- Floating WhatsApp -->
+<a class="float-wa" href="https://wa.me/962XXXXXXXXX" target="_blank" title="تواصلي معنا">
+  <svg viewBox="0 0 24 24" fill="white" width="30" height="30">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.886l6.197-1.448A11.933 11.933 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.493-5.189-1.355l-.373-.22-3.678.859.898-3.582-.241-.385A9.937 9.937 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<script>
+  // ضعي رقم الواتساب الخاص فيكِ هنا (مع رمز الدولة بدون +)
+  const WHATSAPP_NUMBER = "962XXXXXXXXX";
+
+  function sendOrder() {
+    const name     = document.getElementById('inp-name').value.trim();
+    const phone    = document.getElementById('inp-phone').value.trim();
+    const babyname = document.getElementById('inp-babyname').value.trim();
+    const city     = document.getElementById('inp-city').value.trim();
+    const notes    = document.getElementById('inp-notes').value.trim();
+
+    let valid = true;
+
+    // Validation
+    ['name','phone','babyname'].forEach(f => {
+      document.getElementById('field-' + f).classList.remove('error');
+    });
+
+    if (!name) { document.getElementById('field-name').classList.add('error'); valid = false; }
+    if (!phone) { document.getElementById('field-phone').classList.add('error'); valid = false; }
+    if (!babyname) { document.getElementById('field-babyname').classList.add('error'); valid = false; }
+
+    if (!valid) return;
+
+    // Build WhatsApp message
+    let msg = `🎀 *طلب جديد - طقم المولودة*\n\n`;
+    msg += `👤 *الاسم:* ${name}\n`;
+    msg += `📱 *رقم الواتساب:* ${phone}\n`;
+    msg += `✨ *اسم المولودة للتطريز:* ${babyname}\n`;
+    if (city)  msg += `📍 *المدينة:* ${city}\n`;
+    if (notes) msg += `📝 *ملاحظات:* ${notes}\n`;
+    msg += `\n💕 أرجو تأكيد الطلب، شكراً!`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+
+    // Show success
+    document.getElementById('formSection').style.display = 'none';
+    document.getElementById('successScreen').style.display = 'block';
+  }
+</script>
+</body>
+</html>
